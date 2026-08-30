@@ -1,0 +1,14 @@
+;; No dependencies. V2GTP is an 8-byte big-endian header (ProtocolVersion,
+;; InverseProtocolVersion, PayloadType, PayloadLength) around an opaque
+;; payload; nothing here needs a socket, TLS, or an EXI codec.
+{:paths ["src"]
+ :aliases
+ {:test {:extra-paths ["test"]
+         :extra-deps {io.github.cognitect-labs/test-runner
+                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+         :main-opts ["-m" "cognitect.test-runner"]
+         :exec-fn cognitect.test-runner.api/test}
+  :cljs {:extra-paths ["test"]}
+  :lint {:replace-deps {clj-kondo/clj-kondo {:mvn/version "2024.11.14"}}
+         :main-opts ["-m" "clj-kondo.main" "--lint" "src" "test"
+                     "--fail-level" "error"]}}}
