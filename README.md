@@ -156,10 +156,10 @@ counterparties, and this library doesn't touch OCPP at all.
 
 ```sh
 clojure -M:test                                                        # JVM
-nbb --classpath "$(clojure -A:cljs -Spath)" scripts/verify-cljs.cljs   # ClojureScript
+nbb --classpath "$(clojure -A:cljs -Spath)" scripts/verify-cljs.cljk   # ClojureScript
 ```
 
-Both run the same 17 deftests / 346 assertions in `test/v2gtp/core_test.cljc`.
+Both run the same 17 deftests / 346 assertions in `test/v2gtp/core_test.cljk`.
 
 **Header field values are cited** (RISE-V2G + public secondary sources, see
 above) — this library's own frame-level test vectors (the specific EXI/SDP
