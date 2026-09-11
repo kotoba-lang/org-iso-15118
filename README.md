@@ -26,7 +26,7 @@ unparsed. Nothing in this library reads, validates, or generates EXI. A
 caller that needs to actually construct or interpret a SessionSetupReq (or
 any other ISO 15118 application message) needs a real EXI codec on top of
 this, which does not exist in this workspace as of this library's creation
-(checked via `nbb scripts/repo-search.cljs exi xml w3c` against the
+(checked via `kbb --backend sci scripts/repo-search.cljk exi xml w3c` against the
 workspace-wide concept index before starting — the closest existing
 libraries are `kotoba-lang/xml`, a Hiccup<->XML text codec with no EXI
 compression, and several `com-*`/`org-w3-*` facade repos that are
@@ -155,8 +155,8 @@ counterparties, and this library doesn't touch OCPP at all.
 ## Verify
 
 ```sh
-clojure -M:test                                                        # JVM
-nbb --classpath "$(clojure -A:cljs -Spath)" scripts/verify-cljs.cljk   # ClojureScript
+kbb -M:test                                                        # JVM
+kbb --backend sci --classpath "$(kbb -A:cljs -Spath)" scripts/verify-cljs.cljk   # ClojureScript
 ```
 
 Both run the same 17 deftests / 346 assertions in `test/v2gtp/core_test.cljk`.

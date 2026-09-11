@@ -3,6 +3,6 @@
   "private": true,
   "description": "ISO 15118 V2GTP (V2G Transfer Protocol) transport framing in portable .cljc; EXI application payload treated as opaque bytes",
   "scripts": {
-    "test:cljs": "nbb --classpath \"$(clojure -A:cljs -Spath)\" scripts/verify-cljs.cljk"
+    "test:cljs": "kbb --backend sci --classpath \"$(kbb -A:cljs -Spath)\" scripts/verify-cljs.cljk"
   }
 }
