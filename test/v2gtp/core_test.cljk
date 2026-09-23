@@ -1,5 +1,5 @@
 (ns v2gtp.core-test
-  (:require [clojure.test :refer [deftest testing is]]
+  (:require [kotoba.test :refer [deftest testing is]]
             [v2gtp.bits :as bits]
             [v2gtp.frame :as frame]
             [v2gtp.payload-type :as pt]))
